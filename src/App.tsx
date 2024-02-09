@@ -1,11 +1,14 @@
 import { MainLayout } from "@/layouts";
+import { ThemeProvider } from "@/providers";
 import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
-    <MainLayout>
-      <Outlet />
-    </MainLayout>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <MainLayout>
+        <Outlet />
+      </MainLayout>
+    </ThemeProvider>
   );
 };
 

@@ -8,7 +8,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <main>
       <Header />
-      <div>{children}</div>
+      {children}
     </main>
   );
 };
