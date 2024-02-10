@@ -2,11 +2,16 @@
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle, MovieCategory, SerieCategory, AvatarDropdown } from ".";
+import {
+  ModeToggle,
+  MovieCategory,
+  SerieCategory,
+  AvatarDropdown,
+  NavItems,
+  SearchDrawer,
+} from ".";
 
 /**
  * Renders the Navbar component.
@@ -20,23 +25,24 @@ export const Navbar = () => {
       <NavigationMenu>
         <NavigationMenuList className="w-full gap-2">
           <NavigationMenuItem>
+            <NavItems />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <MovieCategory />
           </NavigationMenuItem>
           <NavigationMenuItem>
             <SerieCategory />
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Favorites
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <ModeToggle />
-          </NavigationMenuItem>
+          <NavigationMenuItem></NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-
-      <AvatarDropdown />
+      <NavigationMenu>
+        <NavigationMenuList className="w-full gap-2">
+          <SearchDrawer />
+          <ModeToggle />
+          <AvatarDropdown />
+        </NavigationMenuList>
+      </NavigationMenu>
     </>
   );
 };

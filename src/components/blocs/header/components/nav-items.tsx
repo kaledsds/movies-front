@@ -1,10 +1,19 @@
+import {
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { navigationItems } from "@/config";
 
 export const NavItems = () => {
   return (
-    <div>
+    <div className="flex gap-2">
       {navigationItems.map((item) => (
-        <div>{item.label}</div>
+        <NavigationMenuLink
+          href={item.link || "/"}
+          className={navigationMenuTriggerStyle()}
+        >
+          {item.label}
+        </NavigationMenuLink>
       ))}
     </div>
   );
